@@ -21,8 +21,13 @@ public class Main {
         q.enqueue(56); //56
         q.enqueue(30); // 30 56
         q.enqueue(70); // 70 30 56
-        q.display();
 
+
+        // UC4 dequeue in queue
+        q.dequeue(); // 70 30
+        q.dequeue(); // 70
+        q.display(); // 70
+        q.size();  // 1
 
     }
 };
