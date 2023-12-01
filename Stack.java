@@ -25,9 +25,26 @@ public class Stack {
         }
         size++;
     }
-
+ // return the top element of stack
+    public int peek(){
+        if(head==null) return -1;
+        Node temp=head;
+        while(temp.next!=null) temp=temp.next;
+        return temp.data;
+    }
+    // pop top element of stack
+    public void pop(){
+        if(head==null) return;
+        Node prev=head;
+        Node curr=head;
+        while(curr.next!=null){
+            prev=curr;
+            curr=curr.next;
+        }
+        prev.next=null;
+    }
     // display the elements of stack
-    void display(){
+    public void display(){
         Node temp=head;
         while(temp!=null){
             System.out.print(temp.data+" ");

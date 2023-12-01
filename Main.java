@@ -9,7 +9,12 @@ public class Main {
         st.push(70); // 70
         st.push(30); // 70 30
         st.push(56); // 70 30 56
-        st.display();
+
+        //UC2 peek and pop method
+        st.peek(); // 56
+        st.pop();
+        st.display(); // 70 30
+
 
     }
 };
