@@ -14,6 +14,14 @@ public class Main {
         st.peek(); // 56
         st.pop();
         st.display(); // 70 30
+        st.size(); // 2
+
+        // UC3 initialisation and enqueue in queue
+        Queue q= new Queue();
+        q.enqueue(56); //56
+        q.enqueue(30); // 30 56
+        q.enqueue(70); // 70 30 56
+        q.display();
 
 
     }
