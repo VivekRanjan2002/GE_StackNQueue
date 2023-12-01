@@ -42,7 +42,11 @@ public class Stack {
             curr=curr.next;
         }
         prev.next=null;
+        size--;
     }
+     public int size(){
+        return size;
+     }
     // display the elements of stack
     public void display(){
         Node temp=head;
@@ -50,6 +54,7 @@ public class Stack {
             System.out.print(temp.data+" ");
             temp=temp.next;
         }
+        System.out.println();
     }
 
 }
