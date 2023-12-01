@@ -1,22 +1,28 @@
 package org.example;
 
-public class Queue {
-    Node head;
+public class ManualQueue<T> {
+    Node<T> head;
     int size;
-    public Queue(){
+    public ManualQueue(){
         head=null;
         size=0;
     }
     // add items in queue
-    public void enqueue(int data){
-        Node newNode=new Node(data);
+    public void enqueue(T data){
+        Node <T>newNode=new Node(data);
         newNode.next=head;
         head=newNode;
         size++;
     }
     // remove element from beginning
-    public void dequeue(){
-        if(size==0) return;
+    public T dequeue(){
+        if(size==0) return null;
+        if(size==1){
+            T res= head.data;
+            head=null;
+            size=0;
+            return res;
+        }
         Node prev=head;
         Node curr=head;
         while(curr.next!=null){
@@ -25,6 +31,7 @@ public class Queue {
         }
         prev.next=null;
         size--;
+        return (T)curr.data;
     }
 
     // return size of the current queue
@@ -33,7 +40,7 @@ public class Queue {
     }
     // print the queue
     public void display (){
-        Node temp=head;
+        Node<T> temp=head;
         while(temp!=null){
             System.out.print(temp.data+" ");
             temp=temp.next;

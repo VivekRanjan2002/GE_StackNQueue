@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         //  initialisation of stack
-        Stack st= new Stack();
+        ManualStack<Integer> st= new ManualStack();
         st.push(70); // 70
         st.push(30); // 70 30
         st.push(56); // 70 30 56
@@ -17,7 +17,7 @@ public class Main {
         st.size(); // 2
 
         // UC3 initialisation and enqueue in queue
-        Queue q= new Queue();
+        ManualQueue<Integer> q= new ManualQueue();
         q.enqueue(56); //56
         q.enqueue(30); // 30 56
         q.enqueue(70); // 70 30 56

@@ -1,22 +1,22 @@
 package org.example;
 
-public class Stack {
-    private Node head;
+public class ManualStack<T>{
+    private Node<T> head;
     private int size;
-    public Stack(){
+    public ManualStack(){
         head=null;
         size=0;
     }
     /*
     @desc: add items to the stack and increase the current size of stack
      */
-    public  void push(int data){
-        Node newNode= new Node(data);
+    public  void push(T data){
+        Node <T> newNode= new Node(data);
         if(head==null){
             head=newNode;
         }
         else{
-            Node temp=head;
+            Node<T> temp=head;
             while(temp.next!=null){
                 temp=temp.next;
             }
@@ -26,30 +26,39 @@ public class Stack {
         size++;
     }
  // return the top element of stack
-    public int peek(){
-        if(head==null) return -1;
-        Node temp=head;
+
+    public T peek(){
+        if(head==null) return null;
+        Node <T>temp=head;
         while(temp.next!=null) temp=temp.next;
-        return temp.data;
+        return  temp.data;
     }
     // pop top element of stack
-    public void pop(){
-        if(head==null) return;
-        Node prev=head;
-        Node curr=head;
+    public T pop(){
+        if(head==null) return null ;
+        if(head.next==null){
+            size=0;
+            T res= head.data;
+            head=null;
+            return res;
+        }
+        Node<T>prev=head;
+        Node<T> curr=head;
         while(curr.next!=null){
             prev=curr;
             curr=curr.next;
         }
+
         prev.next=null;
         size--;
+        return curr.data;
     }
      public int size(){
         return size;
      }
     // display the elements of stack
     public void display(){
-        Node temp=head;
+        Node<T>temp=head;
         while(temp!=null){
             System.out.print(temp.data+" ");
             temp=temp.next;
